@@ -14,7 +14,9 @@ export const AuthContextProvider = ({ children }) => {
     setAuthToken(token);
   };
 
-  const logout = () => setAuthToken(null);
+  const logout = () => {
+    setAuthToken(null);
+  };
 
   const value = {
     token: authToken,
