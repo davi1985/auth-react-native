@@ -14,14 +14,16 @@ class Authentication {
       password,
       returnSecureToken: true,
     });
+
+    return data.idToken;
   }
 
-  async createUser(email, password) {
-    await this.authenticate("signUp", email, password);
+  createUser(email, password) {
+    return this.authenticate("signUp", email, password);
   }
 
-  async login(email, password) {
-    await this.authenticate("signInWithPassword", email, password);
+  login(email, password) {
+    return this.authenticate("signInWithPassword", email, password);
   }
 }
 
